@@ -167,7 +167,7 @@ const STYLES = `
 
 .yo-root{
   --bg:#F5F1EA; --surface:#FBF8F2; --ink:#2A2621; --muted:#867D6F;
-  --line:#E5DDCF; --accent:#B86B4B; --accent-deep:#9E5638;
+  --line:#E5DDCF; --accent:#6D7357; --accent-deep:#565B41;
   background:var(--bg); color:var(--ink);
   font-family:'Inter',system-ui,sans-serif;
   min-height:100vh; -webkit-font-smoothing:antialiased;
@@ -231,10 +231,10 @@ const STYLES = `
 .yo-item .iprice{font-family:'Fraunces',Georgia,serif;font-size:18px;line-height:1.45;color:var(--accent-deep);margin-top:13px;}
 .yo-item .yo-btn{margin-top:16px;}
 
-.yo-btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#F7F4EC;border:none;
+.yo-btn{display:inline-flex;align-items:center;justify-content:center;background:#B86B4B !important;color:#F7F4EC;border:none;
   cursor:pointer;font:inherit;font-size:15px;font-weight:500;padding:14px 30px;border-radius:100px;text-decoration:none;
   transition:background .3s ease,transform .3s ease;}
-.yo-btn:hover{background:var(--accent-deep);transform:translateY(-2px);}
+.yo-btn:hover{background:#9E5638 !important;transform:translateY(-2px);}
 .yo-cta{margin-top:32px;}
 @media(max-width:520px){.yo-cta,.yo-item .yo-btn{width:100%;}}
 
@@ -252,7 +252,7 @@ document.head.appendChild(st);
 var app = document.getElementById('app');
 function esc(x){return String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function placeholderHTML(name,i){return '<div class="yo-fill" style="background:'+GRADIENTS[i%GRADIENTS.length]+'"><span class="yo-mono">'+esc(initial(name))+'</span></div>';}
-function bookBtn(){return '<a class="yo-btn" href="'+CONFIG.bookingUrl+'" target="_blank" rel="noopener noreferrer">Записаться</a>';}
+function bookBtn(){return '<a class="yo-btn" style="background-color:#B86B4B !important;color:#F7F4EC !important;border-color:#B86B4B !important;-webkit-appearance:none;appearance:none;" href="'+CONFIG.bookingUrl+'" target="_blank" rel="noopener noreferrer">Записаться</a>';}
 function metaHTML(lines,cls){if(!lines||!lines.length)return '';return '<div class="'+cls+'">'+lines.map(function(l){return '<div class="m">'+esc(l)+'</div>';}).join('')+'</div>';}
 
 function renderCatalog(){

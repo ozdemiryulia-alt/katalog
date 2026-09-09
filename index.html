@@ -248,7 +248,7 @@ function renderCatalog(){
     var media = (s.cardImage||(s.photos&&s.photos[0])) ? '<img src="'+(s.cardImage||s.photos[0])+'" alt="'+esc(s.name)+'">' : placeholderHTML(s.name,i);
     return '<button class="yo-card yo-anim" style="animation-delay:'+Math.min(i*70,500)+'ms" data-i="'+i+'"><div class="yo-media">'+media+'</div><div class="yo-name">'+esc(s.name)+'</div></button>';
   }).join('');
-  app.innerHTML = '<div class="yo-view"><header class="yo-header yo-wrap">'+(CONFIG.brand?'<div class="yo-brand yo-serif">'+esc(CONFIG.brand)+'</div>':'')+'<div class="yo-eyebrow">Услуги</div></header><div class="yo-wrap"><div class="yo-grid">'+cards+'</div></div></div>';
+  app.innerHTML = '<div class="yo-view"><header class="yo-header yo-wrap">'+(CONFIG.brand?'<div class="yo-brand yo-serif">'+esc(CONFIG.brand)+'</div>':'')+'<div class="yo-eyebrow">Услуги</div></header><div class="yo-wrap"><div class="yo-grid">'+cards+'</div><div style="text-align:center;padding:8px 0 44px"><a href="https://ozdemiryulia-alt.github.io/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--accent-deep);text-decoration:none;font-size:13px;font-weight:600">Расписание и запись</a></div></div></div>';
   Array.prototype.forEach.call(app.querySelectorAll('.yo-card'), function(b){ b.addEventListener('click', function(){ renderDetail(+b.dataset.i); }); });
   window.scrollTo(0,0);
 }

@@ -240,7 +240,7 @@ document.head.appendChild(st);
 var app = document.getElementById('app');
 function esc(x){return String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function placeholderHTML(name,i){return '<div class="yo-fill" style="background:'+GRADIENTS[i%GRADIENTS.length]+'"><span class="yo-mono">'+esc(initial(name))+'</span></div>';}
-function bookBtn(){return '<a class="yo-btn" style="background-color:#B86B4B !important;color:#F7F4EC !important;border-color:#B86B4B !important;-webkit-appearance:none;appearance:none;" href="'+CONFIG.bookingUrl+'" target="_blank" rel="noopener noreferrer">Записаться</a>';}
+function bookBtn(){return '<a class="yo-btn" style="background-color:#B86B4B !important;color:#F7F4EC !important;border-color:#B86B4B !important;-webkit-appearance:none;appearance:none;" href="'+CONFIG.bookingUrl+'" rel="noopener noreferrer">Записаться</a>';}
 function metaHTML(lines,cls){if(!lines||!lines.length)return '';return '<div class="'+cls+'">'+lines.map(function(l){return '<div class="m">'+esc(l)+'</div>';}).join('')+'</div>';}
 
 function renderCatalog(){
@@ -271,6 +271,12 @@ function renderDetail(i){
 }
 
 renderCatalog();
+</script>
+<script>
+(function(){
+ function track(name){if(typeof window.ym==='function')window.ym(112303010,'reachGoal',name);if(typeof window.gtag==='function')window.gtag('event',name);}
+ document.addEventListener('click',function(event){const link=event.target.closest('a[href]');if(!link)return;let u;try{u=new URL(link.href);}catch(e){return;}if(u.hostname==='t.me')track('contact_telegram');else if(u.hostname==='wa.me'||u.hostname==='api.whatsapp.com')track('contact_whatsapp');});
+})();
 </script>
 </body>
 </html>
